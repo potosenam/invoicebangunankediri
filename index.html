@@ -429,6 +429,14 @@
         .service-type-manual {
             margin-bottom: 10px;
         }
+        
+        /* Catatan invoice - bukan text box */
+        .document-notes {
+            font-size: 0.8rem;
+            line-height: 1.2;
+            white-space: pre-line;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -554,6 +562,23 @@
                             <button type="button" id="updateTaxDiscountBtn" class="btn btn-outline-primary btn-sm">
                                 <i class="fas fa-sync-alt me-1"></i>Update
                             </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Input untuk Catatan dan Syarat Pembayaran -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="projectNotes" class="form-label">Catatan untuk Dokumen</label>
+                            <textarea class="form-control" id="projectNotes" rows="3">Pembayaran dapat dilakukan via transfer ke:
+Bank: BCA Kediri
+No. Rekening: 123-456-7890
+Atas Nama: BANGUNAN KEDIRI
+
+Pembayaran dianggap lunas setelah dana diterima.</textarea>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="projectTerms" class="form-label">Syarat Pembayaran</label>
+                            <textarea class="form-control" id="projectTerms" rows="3">50% diawal, 50% setelah pekerjaan selesai</textarea>
                         </div>
                     </div>
                     
@@ -776,16 +801,19 @@
             
             <div class="row mt-1">
                 <div class="col-md-6">
+                    <!-- Catatan Invoice - BUKAN TEXT BOX -->
                     <div class="mb-1">
-                        <label for="documentNotes" class="form-label" style="font-size: 0.85rem;">Catatan:</label>
-                        <textarea class="form-control" id="documentNotes" rows="2" style="font-size: 0.8rem; padding: 5px;">Pembayaran dapat dilakukan via transfer ke:
-Bank: BCA Kediri
-No. Rekening: 123-456-7890
-Atas Nama: BANGUNAN KEDIRI</textarea>
+                        <label class="form-label" style="font-size: 0.85rem;">Catatan:</label>
+                        <div id="documentNotes" class="document-notes">
+                            <!-- Catatan akan ditampilkan di sini -->
+                        </div>
                     </div>
+                    <!-- Syarat Pembayaran - BUKAN TEXT BOX -->
                     <div class="mb-1">
-                        <label for="documentTerms" class="form-label" style="font-size: 0.85rem;">Syarat Pembayaran:</label>
-                        <textarea class="form-control" id="documentTerms" rows="1" style="font-size: 0.8rem; padding: 5px;">50% diawal, 50% setelah pekerjaan selesai</textarea>
+                        <label class="form-label" style="font-size: 0.85rem;">Syarat Pembayaran:</label>
+                        <div id="documentTerms" class="document-notes">
+                            <!-- Syarat pembayaran akan ditampilkan di sini -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -1362,6 +1390,12 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                     document.getElementById('documentTypeBadge').textContent = 'PENAWARAN';
                     document.getElementById('documentTypeBadge').className = 'document-type-badge badge-quotation';
                 }
+                
+                // Isi catatan dan syarat pembayaran dari form (BUKAN TEXT BOX)
+                const projectNotes = document.getElementById('projectNotes').value;
+                const projectTerms = document.getElementById('projectTerms').value;
+                document.getElementById('documentNotes').textContent = projectNotes;
+                document.getElementById('documentTerms').textContent = projectTerms;
                 
                 // Isi items dokumen dengan grouping berdasarkan jenis jasa
                 const documentItemsList = document.getElementById('documentItemsList');
