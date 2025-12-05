@@ -113,11 +113,11 @@
             margin-top: 20px;
         }
         
-        /* Invoice Section - Format A4 */
+        /* Invoice Section - Format A4 dengan ukuran lebih kecil */
         .invoice-section {
             display: none;
             background-color: white;
-            padding: 30px;
+            padding: 20px; /* Dikurangi dari 30px */
             border-radius: 5px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             margin-top: 30px;
@@ -126,42 +126,44 @@
             margin-left: auto;
             margin-right: auto;
             position: relative;
+            font-size: 0.9rem; /* Ukuran font lebih kecil */
         }
         
         .invoice-header {
             border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 15px; /* Dikurangi dari 20px */
-            margin-bottom: 15px; /* Dikurangi dari 20px */
+            padding-bottom: 10px; /* Dikurangi */
+            margin-bottom: 10px; /* Dikurangi */
         }
         
         .invoice-logo {
-            max-width: 120px;
+            max-width: 100px; /* Diperkecil dari 120px */
             height: auto;
         }
         
         .company-details {
-            padding-left: 20px;
+            padding-left: 15px; /* Dikurangi */
         }
         
         .company-details h4 {
-            font-size: 1.5rem;
+            font-size: 1.3rem; /* Dikurangi dari 1.5rem */
             font-weight: bold;
-            margin-bottom: 3px; /* Dikurangi dari 5px */
+            margin-bottom: 2px; /* Dikurangi */
             color: #2c3e50;
         }
         
         .company-details p {
-            margin-bottom: 1px; /* Dikurangi dari 2px */
-            font-size: 0.9rem;
-            line-height: 1.2; /* Dikurangi dari 1.3 */
+            margin-bottom: 0; /* Dikurangi */
+            font-size: 0.8rem; /* Dikurangi dari 0.9rem */
+            line-height: 1.1; /* Dikurangi dari 1.2 */
         }
         
         .document-type-badge {
             display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 3px 10px; /* Dikurangi */
+            border-radius: 15px; /* Dikurangi */
             font-weight: bold;
-            margin-bottom: 8px; /* Dikurangi dari 10px */
+            margin-bottom: 5px; /* Dikurangi */
+            font-size: 0.85rem; /* Ditambahkan */
         }
         
         .badge-invoice {
@@ -175,16 +177,17 @@
         }
         
         .signature-area {
-            margin-top: 40px; /* Dikurangi dari 60px */
-            padding-top: 15px; /* Dikurangi dari 20px */
+            margin-top: 20px; /* Dikurangi dari 40px */
+            padding-top: 10px; /* Dikurangi dari 15px */
             border-top: 1px dashed #ccc;
             position: relative;
+            font-size: 0.85rem; /* Ditambahkan */
         }
         
         .signature-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px; /* Dikurangi dari 40px */
+            margin-top: 20px; /* Dikurangi dari 30px */
             position: relative;
         }
         
@@ -202,18 +205,18 @@
             width: 100%;
             height: 1px;
             background-color: #000;
-            margin: 50px 0 5px 0; /* Dikurangi dari 60px */
+            margin: 40px 0 5px 0; /* Dikurangi dari 50px */
         }
         
         /* Posisi stempel di atas TTD direktur, agak ke kiri */
         .stempel-over-signature {
             position: absolute;
-            width: 130px; /* Diperbesar dari 100px */
-            height: 130px; /* Diperbesar dari 100px */
+            width: 100px; /* Diperkecil dari 130px */
+            height: 100px; /* Diperkecil dari 130px */
             opacity: 0.9;
             z-index: 10;
-            top: -20px;
-            left: 20px;
+            top: -15px; /* Dikurangi dari -20px */
+            left: 15px; /* Dikurangi dari 20px */
             transform: rotate(-5deg);
         }
         
@@ -234,9 +237,10 @@
                 width: 100%;
                 height: 100%;
                 margin: 0;
-                padding: 15mm;
+                padding: 10mm; /* Dikurangi dari 15mm */
                 box-shadow: none;
                 page-break-after: always;
+                font-size: 0.85rem !important; /* Ukuran font cetak lebih kecil */
             }
             
             .no-print {
@@ -246,6 +250,7 @@
             /* Pastikan tabel tidak terpotong saat dicetak */
             table {
                 page-break-inside: auto;
+                font-size: 0.85rem !important; /* Ukuran font tabel saat cetak */
             }
             
             tr {
@@ -256,7 +261,7 @@
             /* Menambahkan margin untuk printer */
             @page {
                 size: A4;
-                margin: 15mm;
+                margin: 10mm; /* Dikurangi dari 15mm */
             }
         }
         
@@ -291,7 +296,7 @@
         .watermark {
             position: absolute;
             opacity: 0.1;
-            font-size: 120px;
+            font-size: 100px; /* Diperkecil dari 120px */
             font-weight: bold;
             color: #ccc;
             transform: rotate(-45deg);
@@ -306,7 +311,7 @@
             .invoice-section {
                 width: 100%;
                 min-height: auto;
-                padding: 20px;
+                padding: 15px; /* Dikurangi */
             }
             
             .signature-container {
@@ -315,7 +320,7 @@
             
             .client-signature, .director-signature {
                 width: 100%;
-                margin-bottom: 30px;
+                margin-bottom: 20px; /* Dikurangi */
             }
         }
         
@@ -352,32 +357,72 @@
         }
         
         .service-group-header td {
-            padding-top: 12px !important; /* Dikurangi dari 15px */
-            padding-bottom: 3px !important; /* Dikurangi dari 5px */
+            padding-top: 8px !important; /* Dikurangi */
+            padding-bottom: 2px !important; /* Dikurangi */
         }
         
         .item-row td {
-            padding-left: 30px !important;
+            padding-left: 25px !important; /* Dikurangi dari 30px */
         }
         
         /* Mengurangi jarak antar baris di tabel */
         .table td, .table th {
-            padding: 6px 8px !important; /* Dikurangi dari 8px 12px */
+            padding: 4px 6px !important; /* Dikurangi lagi */
+            font-size: 0.85rem; /* Ukuran font tabel lebih kecil */
         }
         
         /* Mengurangi margin di bagian detail proyek dan klien */
         .row.mb-4 {
-            margin-bottom: 1rem !important; /* Dikurangi dari 1.5rem */
+            margin-bottom: 0.5rem !important; /* Dikurangi lagi */
         }
         
         /* Mengurangi margin di bagian catatan dan total */
         .row.mt-4 {
-            margin-top: 1rem !important; /* Dikurangi dari 1.5rem */
+            margin-top: 0.5rem !important; /* Dikurangi lagi */
         }
         
         /* Mengurangi padding di total section */
         .total-section {
-            padding: 12px; /* Dikurangi dari 15px */
+            padding: 8px; /* Dikurangi lagi */
+            font-size: 0.9rem; /* Ditambahkan */
+        }
+        
+        /* Item counter */
+        .item-counter {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* Form input untuk PPN dan diskon manual */
+        .tax-discount-section {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Input untuk PPN dan diskon */
+        .tax-discount-inputs .form-control {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
+        
+        /* Input untuk jumlah item per jasa */
+        .item-details-row {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        /* Auto-numbering untuk items dalam group */
+        .auto-number {
+            display: inline-block;
+            width: 20px;
+            text-align: right;
+            margin-right: 5px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -483,6 +528,25 @@
                         </div>
                     </div>
                     
+                    <!-- Input untuk PPN dan Diskon Manual -->
+                    <div class="row tax-discount-inputs">
+                        <div class="col-md-3 mb-3">
+                            <label for="ppnPercentage" class="form-label">PPN (%)</label>
+                            <input type="number" class="form-control" id="ppnPercentage" value="10" min="0" max="100" step="0.1">
+                            <small class="form-text text-muted">Persentase PPN</small>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="discountAmount" class="form-label">Diskon (Rp)</label>
+                            <input type="number" class="form-control" id="discountAmount" value="0" min="0">
+                            <small class="form-text text-muted">Nominal diskon</small>
+                        </div>
+                        <div class="col-md-6 mb-3 d-flex align-items-end">
+                            <button type="button" id="updateTaxDiscountBtn" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-sync-alt me-1"></i>Update PPN & Diskon
+                            </button>
+                        </div>
+                    </div>
+                    
                     <!-- Pilihan Jenis Dokumen -->
                     <div class="document-type-selector">
                         <label class="form-label">Jenis Dokumen <span class="text-danger">*</span></label>
@@ -500,15 +564,15 @@
             </div>
         </div>
 
-        <!-- Form Input Item -->
+        <!-- Form Input Item dengan Sistem Grup Jasa -->
         <div class="card">
             <div class="card-header">
-                <i class="fas fa-plus-circle me-2"></i>Input Item Pekerjaan
+                <i class="fas fa-plus-circle me-2"></i>Input Item Pekerjaan (Kelompok Jasa)
             </div>
             <div class="card-body">
                 <form id="itemForm">
                     <div class="row">
-                        <div class="col-md-3 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label for="serviceType" class="form-label">Jenis Jasa <span class="text-danger">*</span></label>
                             <select class="form-select" id="serviceType" required>
                                 <option value="">Pilih Jenis Jasa</option>
@@ -521,26 +585,32 @@
                                 <option value="Lainnya">Lainnya</option>
                             </select>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="itemName" class="form-label">Nama Item <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="itemName" required>
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label for="quantity" class="form-label">Volume <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="quantity" min="0" step="0.01" required>
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label for="unit" class="form-label">Satuan <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="unit" placeholder="m², m³, unit, dll" required>
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label for="unitPrice" class="form-label">Harga Satuan (Rp) <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="unitPrice" min="0" required>
+                        <div class="col-md-8 mb-3">
+                            <label class="form-label">Nama Item dalam Jasa ini:</label>
+                            <div id="itemInputsContainer">
+                                <!-- Input item akan ditambahkan dinamis di sini -->
+                                <div class="item-input-row mb-2">
+                                    <div class="input-group">
+                                        <span class="input-group-text auto-number">1.</span>
+                                        <input type="text" class="form-control item-name-input" placeholder="Nama item (mis: Pekerjaan pondasi)">
+                                        <input type="number" class="form-control volume-input" placeholder="Volume" min="0" step="0.01" style="max-width: 100px;">
+                                        <input type="text" class="form-control unit-input" placeholder="Satuan" style="max-width: 80px;">
+                                        <input type="number" class="form-control price-input" placeholder="Harga Satuan" min="0" style="max-width: 150px;">
+                                        <button type="button" class="btn btn-outline-danger remove-item-btn" style="display: none;">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" id="addMoreItemBtn" class="btn btn-outline-secondary btn-sm mt-2">
+                                <i class="fas fa-plus me-1"></i>Tambah Item Lain dalam Jasa Ini
+                            </button>
+                            <div class="item-counter">Item dalam jasa ini: <span id="itemCount">1</span></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Tambah Item</button>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Tambah Jasa & Item</button>
                         </div>
                     </div>
                 </form>
@@ -558,14 +628,13 @@
                     <table class="table table-striped" id="itemsTable">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Jenis Jasa</th>
-                                <th>Nama Item</th>
-                                <th>Volume</th>
-                                <th>Satuan</th>
-                                <th>Harga Satuan</th>
-                                <th>Total</th>
-                                <th>Aksi</th>
+                                <th width="5%">No</th>
+                                <th width="25%">Jenis Jasa</th>
+                                <th width="40%">Nama Item</th>
+                                <th width="10%">Volume</th>
+                                <th width="10%">Satuan</th>
+                                <th width="10%">Total</th>
+                                <th width="5%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="itemsList">
@@ -574,23 +643,40 @@
                     </table>
                 </div>
                 
-                <!-- Total Section -->
+                <!-- Total Section dengan PPN dan Diskon Manual -->
                 <div class="total-section">
                     <div class="row">
-                        <div class="col-md-6 offset-md-6">
-                            <div class="d-flex justify-content-between mb-2">
+                        <div class="col-md-6">
+                            <div class="tax-discount-section">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="currentPpn" class="form-label">PPN (%)</label>
+                                        <input type="number" class="form-control form-control-sm" id="currentPpn" value="10" min="0" max="100" step="0.1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="currentDiscount" class="form-label">Diskon (Rp)</label>
+                                        <input type="number" class="form-control form-control-sm" id="currentDiscount" value="0" min="0">
+                                    </div>
+                                </div>
+                                <button type="button" id="applyTaxDiscountBtn" class="btn btn-outline-primary btn-sm mt-2">
+                                    <i class="fas fa-check me-1"></i>Terapkan
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-between mb-1">
                                 <span>Subtotal:</span>
                                 <span id="subtotal">Rp 0</span>
                             </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>PPN (10%):</span>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>PPN (<span id="ppnPercentDisplay">10</span>%):</span>
                                 <span id="tax">Rp 0</span>
                             </div>
-                            <div class="d-flex justify-content-between mb-2">
+                            <div class="d-flex justify-content-between mb-1">
                                 <span>Diskon:</span>
                                 <span id="discount">Rp 0</span>
                             </div>
-                            <hr>
+                            <hr class="my-1">
                             <div class="d-flex justify-content-between fw-bold fs-5">
                                 <span>Total:</span>
                                 <span id="total">Rp 0</span>
@@ -605,10 +691,16 @@
                     <button id="downloadPdfBtn" class="btn btn-pdf me-2"><i class="fas fa-file-pdf me-1"></i>Download PDF</button>
                     <button id="sendWhatsAppBtn" class="btn btn-whatsapp"><i class="fab fa-whatsapp me-1"></i>Kirim ke WhatsApp</button>
                 </div>
+                
+                <!-- Warning jika item terlalu banyak -->
+                <div id="itemLimitWarning" class="alert alert-warning mt-3" style="display: none;">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Peringatan:</strong> Jumlah item melebihi kapasitas 1 halaman A4. Disarankan untuk mengurangi jumlah item atau menggabungkan beberapa item.
+                </div>
             </div>
         </div>
 
-        <!-- Document Section - Format A4 -->
+        <!-- Document Section - Format A4 yang lebih ringkas -->
         <div class="invoice-section" id="invoiceSection">
             <div class="watermark">BANGUNAN KEDIRI</div>
             
@@ -617,40 +709,40 @@
                     <div class="col-md-6 d-flex align-items-start">
                         <img src="img/logo.png" alt="Bangunan Kediri" class="invoice-logo">
                         <div class="company-details">
-                            <h4 class="mt-0 mb-2">Bangunan Kediri</h4>
-                            <p class="mb-1">Jl. Sumur pompa, RT.06 RW.02</p>
-                            <p class="mb-1">Ds. Gabru Kec. Gurah Kediri</p>
-                            <p class="mb-1">Telp/WA : 085746473070</p>
+                            <h4 class="mt-0 mb-1">Bangunan Kediri</h4>
+                            <p class="mb-0">Jl. Sumur pompa, RT.06 RW.02</p>
+                            <p class="mb-0">Ds. Gabru Kec. Gurah Kediri</p>
+                            <p class="mb-0">Telp/WA : 085746473070</p>
                             <p class="mb-0">bangunankediri2025@gmail.com</p>
                         </div>
                     </div>
                     <div class="col-md-6 text-end">
                         <div id="documentTypeBadge" class="document-type-badge badge-invoice">INVOICE</div>
-                        <h2 id="documentTitle" class="text-uppercase mb-2">INVOICE</h2>
-                        <p class="mb-1"><strong>No. Dokumen:</strong> <span id="documentNumber">BK/001/INV/I/2025</span></p>
-                        <p class="mb-1"><strong>Tanggal:</strong> <span id="documentDate">01/01/2025</span></p>
+                        <h2 id="documentTitle" class="text-uppercase mb-1" style="font-size: 1.5rem;">INVOICE</h2>
+                        <p class="mb-0"><strong>No. Dokumen:</strong> <span id="documentNumber">BK/001/INV/I/2025</span></p>
+                        <p class="mb-0"><strong>Tanggal:</strong> <span id="documentDate">01/01/2025</span></p>
                         <p class="mb-0" id="dueDateContainer"><strong>Jatuh Tempo:</strong> <span id="dueDate">15/01/2025</span></p>
                     </div>
                 </div>
             </div>
             
-            <div class="row mb-3">
+            <div class="row mb-2">
                 <div class="col-md-6">
-                    <h5 class="mb-2">Kepada:</h5>
-                    <p id="documentClientName" class="fw-bold mb-1">Nama Klien</p>
-                    <p id="documentClientAddress" class="mb-1">Alamat Klien</p>
+                    <h5 class="mb-1" style="font-size: 1rem;">Kepada:</h5>
+                    <p id="documentClientName" class="fw-bold mb-0">Nama Klien</p>
+                    <p id="documentClientAddress" class="mb-0">Alamat Klien</p>
                     <p id="documentClientPhone" class="mb-0">Telp/WA: -</p>
                 </div>
                 <div class="col-md-6">
-                    <h5 class="mb-2">Detail Proyek:</h5>
-                    <p id="documentProjectName" class="fw-bold mb-1">Nama Proyek</p>
-                    <p id="documentProjectNumber" class="mb-1">No. Proyek: -</p>
+                    <h5 class="mb-1" style="font-size: 1rem;">Detail Proyek:</h5>
+                    <p id="documentProjectName" class="fw-bold mb-0">Nama Proyek</p>
+                    <p id="documentProjectNumber" class="mb-0">No. Proyek: -</p>
                     <p id="documentProjectDate" class="mb-0">Tanggal: -</p>
                 </div>
             </div>
             
             <div class="table-responsive">
-                <table class="table table-bordered" id="documentTable">
+                <table class="table table-bordered mb-2" id="documentTable" style="font-size: 0.8rem;">
                     <thead>
                         <tr>
                             <th width="5%">No</th>
@@ -666,38 +758,36 @@
                 </table>
             </div>
             
-            <div class="row mt-3">
+            <div class="row mt-1">
                 <div class="col-md-6">
-                    <div class="mb-2">
-                        <label for="documentNotes" class="form-label">Catatan:</label>
-                        <textarea class="form-control" id="documentNotes" rows="3">Pembayaran dapat dilakukan via transfer ke:
+                    <div class="mb-1">
+                        <label for="documentNotes" class="form-label" style="font-size: 0.85rem;">Catatan:</label>
+                        <textarea class="form-control" id="documentNotes" rows="2" style="font-size: 0.8rem; padding: 5px;">Pembayaran dapat dilakukan via transfer ke:
 Bank: BCA Kediri
 No. Rekening: 123-456-7890
-Atas Nama: BANGUNAN KEDIRI
-
-Pembayaran dianggap lunas setelah dana diterima.</textarea>
+Atas Nama: BANGUNAN KEDIRI</textarea>
                     </div>
-                    <div class="mb-2">
-                        <label for="documentTerms" class="form-label">Syarat Pembayaran:</label>
-                        <textarea class="form-control" id="documentTerms" rows="2">50% diawal, 50% setelah pekerjaan selesai</textarea>
+                    <div class="mb-1">
+                        <label for="documentTerms" class="form-label" style="font-size: 0.85rem;">Syarat Pembayaran:</label>
+                        <textarea class="form-control" id="documentTerms" rows="1" style="font-size: 0.8rem; padding: 5px;">50% diawal, 50% setelah pekerjaan selesai</textarea>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="total-section">
-                        <div class="d-flex justify-content-between mb-1">
+                    <div class="total-section" style="padding: 8px; font-size: 0.85rem;">
+                        <div class="d-flex justify-content-between mb-0">
                             <span>Subtotal:</span>
                             <span id="documentSubtotal">Rp 0</span>
                         </div>
-                        <div class="d-flex justify-content-between mb-1">
-                            <span>PPN (10%):</span>
+                        <div class="d-flex justify-content-between mb-0">
+                            <span>PPN (<span id="documentPpnPercent">10</span>%):</span>
                             <span id="documentTax">Rp 0</span>
                         </div>
-                        <div class="d-flex justify-content-between mb-1">
+                        <div class="d-flex justify-content-between mb-0">
                             <span>Diskon:</span>
                             <span id="documentDiscount">Rp 0</span>
                         </div>
-                        <hr class="my-2">
-                        <div class="d-flex justify-content-between fw-bold fs-5">
+                        <hr class="my-1">
+                        <div class="d-flex justify-content-between fw-bold" style="font-size: 1rem;">
                             <span>TOTAL PEMBAYARAN:</span>
                             <span id="documentTotal">Rp 0</span>
                         </div>
@@ -710,10 +800,10 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                 <div class="signature-container">
                     <!-- Tanda Tangan Klien -->
                     <div class="client-signature">
-                        <p class="mb-1">Diterima oleh,</p>
+                        <p class="mb-0">Diterima oleh,</p>
                         <div class="signature-line"></div>
-                        <p id="documentClientSignatureName" class="fw-bold mt-1">(Nama Klien)</p>
-                        <p>Klien</p>
+                        <p id="documentClientSignatureName" class="fw-bold mt-0">(Nama Klien)</p>
+                        <p style="font-size: 0.8rem;">Klien</p>
                     </div>
                     
                     <!-- Tanda Tangan Direktur dengan Stempel di atasnya -->
@@ -721,23 +811,23 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                         <!-- Stempel ditempatkan di atas tanda tangan direktur, agak ke kiri -->
                         <img src="img/stempel.png" alt="Stempel Perusahaan" class="stempel-over-signature">
                         
-                        <p class="mb-1">Hormat kami,</p>
+                        <p class="mb-0">Hormat kami,</p>
                         <div class="signature-line"></div>
-                        <p class="fw-bold mt-1">BANGUNAN KEDIRI</p>
-                        <p>Direktur</p>
+                        <p class="fw-bold mt-0">BANGUNAN KEDIRI</p>
+                        <p style="font-size: 0.8rem;">Direktur</p>
                     </div>
                 </div>
                 
-                <div class="mt-2 text-center">
-                    <small class="text-muted">Dokumen ini sah dan dapat digunakan sebagai alat bukti pembayaran yang sah.</small>
+                <div class="mt-1 text-center">
+                    <small class="text-muted" style="font-size: 0.7rem;">Dokumen ini sah dan dapat digunakan sebagai alat bukti pembayaran yang sah.</small>
                 </div>
             </div>
             
-            <div class="text-center mt-3 no-print">
-                <button id="closeDocumentBtn" class="btn btn-secondary"><i class="fas fa-times me-1"></i>Tutup Dokumen</button>
-                <button id="printDocumentPreviewBtn" class="btn btn-primary me-2"><i class="fas fa-print me-1"></i>Cetak</button>
-                <button id="downloadPdfPreviewBtn" class="btn btn-pdf me-2"><i class="fas fa-file-pdf me-1"></i>Download PDF</button>
-                <button id="sendWhatsAppFromPreviewBtn" class="btn btn-whatsapp"><i class="fab fa-whatsapp me-1"></i>Kirim ke WhatsApp</button>
+            <div class="text-center mt-2 no-print">
+                <button id="closeDocumentBtn" class="btn btn-secondary btn-sm"><i class="fas fa-times me-1"></i>Tutup Dokumen</button>
+                <button id="printDocumentPreviewBtn" class="btn btn-primary btn-sm me-2"><i class="fas fa-print me-1"></i>Cetak</button>
+                <button id="downloadPdfPreviewBtn" class="btn btn-pdf btn-sm me-2"><i class="fas fa-file-pdf me-1"></i>Download PDF</button>
+                <button id="sendWhatsAppFromPreviewBtn" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp me-1"></i>Kirim ke WhatsApp</button>
             </div>
         </div>
     </div>
@@ -821,6 +911,8 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
             let itemCounter = 1;
             let currentDocumentImage = null;
             let currentDocumentType = 'invoice'; // 'invoice' atau 'quotation'
+            let ppnPercentage = 10; // Default PPN 10%
+            let discountAmount = 0; // Default diskon 0
             
             // Format angka ke format Rupiah
             function formatRupiah(angka) {
@@ -874,77 +966,221 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                 return `BK/${projectNumber}/${docTypeCode}/${monthRoman}/${year}`;
             }
             
-            // Hitung total
+            // Hitung total dengan PPN dan diskon
             function calculateTotal() {
                 let subtotal = 0;
                 items.forEach(item => {
                     subtotal += item.total;
                 });
                 
-                const tax = subtotal * 0.1; // PPN 10%
-                const discount = 0; // Bisa ditambahkan fitur diskon nanti
+                const tax = subtotal * (ppnPercentage / 100);
+                const discount = discountAmount;
                 const total = subtotal + tax - discount;
                 
                 document.getElementById('subtotal').textContent = formatRupiah(subtotal);
                 document.getElementById('tax').textContent = formatRupiah(tax);
                 document.getElementById('discount').textContent = formatRupiah(discount);
                 document.getElementById('total').textContent = formatRupiah(total);
+                document.getElementById('ppnPercentDisplay').textContent = ppnPercentage;
                 
                 return { subtotal, tax, discount, total };
             }
             
-            // Tambah item
+            // Update PPN dan diskon
+            document.getElementById('applyTaxDiscountBtn').addEventListener('click', function() {
+                ppnPercentage = parseFloat(document.getElementById('currentPpn').value) || 0;
+                discountAmount = parseFloat(document.getElementById('currentDiscount').value) || 0;
+                calculateTotal();
+            });
+            
+            // Update PPN dan diskon dari form proyek
+            document.getElementById('updateTaxDiscountBtn').addEventListener('click', function() {
+                ppnPercentage = parseFloat(document.getElementById('ppnPercentage').value) || 0;
+                discountAmount = parseFloat(document.getElementById('discountAmount').value) || 0;
+                
+                // Update nilai di total section
+                document.getElementById('currentPpn').value = ppnPercentage;
+                document.getElementById('currentDiscount').value = discountAmount;
+                
+                calculateTotal();
+            });
+            
+            // Inisialisasi input item dinamis
+            let itemInputCount = 1;
+            const itemInputsContainer = document.getElementById('itemInputsContainer');
+            const itemCountElement = document.getElementById('itemCount');
+            
+            function updateItemNumbers() {
+                const rows = itemInputsContainer.querySelectorAll('.item-input-row');
+                rows.forEach((row, index) => {
+                    const autoNumber = row.querySelector('.auto-number');
+                    autoNumber.textContent = `${index + 1}.`;
+                    const removeBtn = row.querySelector('.remove-item-btn');
+                    removeBtn.style.display = rows.length > 1 ? 'block' : 'none';
+                });
+                itemCountElement.textContent = rows.length;
+            }
+            
+            // Tambah input item baru
+            document.getElementById('addMoreItemBtn').addEventListener('click', function() {
+                const newRow = document.createElement('div');
+                newRow.className = 'item-input-row mb-2';
+                newRow.innerHTML = `
+                    <div class="input-group">
+                        <span class="input-group-text auto-number">${itemInputCount + 1}.</span>
+                        <input type="text" class="form-control item-name-input" placeholder="Nama item (mis: Pekerjaan pondasi)" required>
+                        <input type="number" class="form-control volume-input" placeholder="Volume" min="0" step="0.01" required style="max-width: 100px;">
+                        <input type="text" class="form-control unit-input" placeholder="Satuan" required style="max-width: 80px;">
+                        <input type="number" class="form-control price-input" placeholder="Harga Satuan" min="0" required style="max-width: 150px;">
+                        <button type="button" class="btn btn-outline-danger remove-item-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+                
+                itemInputsContainer.appendChild(newRow);
+                itemInputCount++;
+                updateItemNumbers();
+                
+                // Tambah event listener untuk tombol hapus
+                newRow.querySelector('.remove-item-btn').addEventListener('click', function() {
+                    newRow.remove();
+                    itemInputCount--;
+                    updateItemNumbers();
+                });
+            });
+            
+            // Tambah item (kelompok jasa)
             document.getElementById('itemForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
                 const serviceType = document.getElementById('serviceType').value;
-                const itemName = document.getElementById('itemName').value;
-                const quantity = parseFloat(document.getElementById('quantity').value);
-                const unit = document.getElementById('unit').value;
-                const unitPrice = parseInt(document.getElementById('unitPrice').value);
-                const total = quantity * unitPrice;
+                if (!serviceType) {
+                    alert('Silakan pilih jenis jasa terlebih dahulu!');
+                    return;
+                }
                 
-                const newItem = {
-                    id: itemCounter++,
-                    serviceType: serviceType,
-                    name: itemName,
-                    quantity: quantity,
-                    unit: unit,
-                    unitPrice: unitPrice,
-                    total: total
-                };
+                // Ambil semua input item
+                const itemRows = itemInputsContainer.querySelectorAll('.item-input-row');
+                let hasValidItem = false;
                 
-                items.push(newItem);
+                itemRows.forEach(row => {
+                    const itemName = row.querySelector('.item-name-input').value;
+                    const quantity = parseFloat(row.querySelector('.volume-input').value);
+                    const unit = row.querySelector('.unit-input').value;
+                    const unitPrice = parseInt(row.querySelector('.price-input').value);
+                    
+                    if (itemName && !isNaN(quantity) && unit && !isNaN(unitPrice)) {
+                        const total = quantity * unitPrice;
+                        
+                        const newItem = {
+                            id: itemCounter++,
+                            serviceType: serviceType,
+                            name: itemName,
+                            quantity: quantity,
+                            unit: unit,
+                            unitPrice: unitPrice,
+                            total: total
+                        };
+                        
+                        items.push(newItem);
+                        hasValidItem = true;
+                    }
+                });
+                
+                if (!hasValidItem) {
+                    alert('Silakan isi setidaknya satu item dengan data yang lengkap!');
+                    return;
+                }
+                
                 updateItemsTable();
                 calculateTotal();
                 
                 // Reset form
                 document.getElementById('itemForm').reset();
-                document.getElementById('itemName').focus();
+                itemInputsContainer.innerHTML = `
+                    <div class="item-input-row mb-2">
+                        <div class="input-group">
+                            <span class="input-group-text auto-number">1.</span>
+                            <input type="text" class="form-control item-name-input" placeholder="Nama item (mis: Pekerjaan pondasi)" required>
+                            <input type="number" class="form-control volume-input" placeholder="Volume" min="0" step="0.01" required style="max-width: 100px;">
+                            <input type="text" class="form-control unit-input" placeholder="Satuan" required style="max-width: 80px;">
+                            <input type="number" class="form-control price-input" placeholder="Harga Satuan" min="0" required style="max-width: 150px;">
+                            <button type="button" class="btn btn-outline-danger remove-item-btn" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                itemInputCount = 1;
+                updateItemNumbers();
+                document.getElementById('serviceType').focus();
             });
             
-            // Update tabel items
+            // Update tabel items dengan pengelompokan
             function updateItemsTable() {
                 const itemsList = document.getElementById('itemsList');
                 itemsList.innerHTML = '';
                 
-                items.forEach((item, index) => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${index + 1}</td>
-                        <td>${item.serviceType || '-'}</td>
-                        <td>${item.name}</td>
-                        <td>${item.quantity}</td>
-                        <td>${item.unit}</td>
-                        <td>${formatRupiah(item.unitPrice)}</td>
-                        <td>${formatRupiah(item.total)}</td>
+                // Kelompokkan item berdasarkan jenis jasa
+                const groupedItems = {};
+                items.forEach(item => {
+                    if (!groupedItems[item.serviceType]) {
+                        groupedItems[item.serviceType] = [];
+                    }
+                    groupedItems[item.serviceType].push(item);
+                });
+                
+                let rowNumber = 1;
+                
+                // Tampilkan item per kelompok jasa
+                Object.keys(groupedItems).forEach(serviceType => {
+                    const serviceItems = groupedItems[serviceType];
+                    
+                    // Baris untuk header jenis jasa
+                    const serviceRow = document.createElement('tr');
+                    serviceRow.className = 'service-group-header';
+                    serviceRow.innerHTML = `
+                        <td>${rowNumber}</td>
+                        <td colspan="5"><strong>${serviceType}</strong></td>
                         <td>
-                            <button class="btn btn-sm btn-danger delete-item" data-id="${item.id}">
+                            <button class="btn btn-sm btn-outline-danger delete-service" data-service="${serviceType}">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>
                     `;
-                    itemsList.appendChild(row);
+                    itemsList.appendChild(serviceRow);
+                    rowNumber++;
+                    
+                    // Baris untuk setiap item dalam jasa ini
+                    serviceItems.forEach((item, index) => {
+                        const itemRow = document.createElement('tr');
+                        itemRow.className = 'item-row';
+                        itemRow.innerHTML = `
+                            <td></td>
+                            <td></td>
+                            <td>${item.name}</td>
+                            <td>${item.quantity}</td>
+                            <td>${item.unit}</td>
+                            <td>${formatRupiah(item.total)}</td>
+                            <td>
+                                <button class="btn btn-sm btn-danger delete-item" data-id="${item.id}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        `;
+                        itemsList.appendChild(itemRow);
+                    });
+                });
+                
+                // Update nomor urut
+                const allRows = itemsList.querySelectorAll('tr');
+                let counter = 1;
+                allRows.forEach(row => {
+                    if (!row.classList.contains('item-row')) {
+                        const td = row.querySelector('td');
+                        if (td) td.textContent = counter++;
+                    }
                 });
                 
                 // Tambah event listener untuk tombol hapus
@@ -956,6 +1192,34 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                         calculateTotal();
                     });
                 });
+                
+                // Tambah event listener untuk tombol hapus jasa
+                document.querySelectorAll('.delete-service').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const serviceType = this.getAttribute('data-service');
+                        if (confirm(`Hapus semua item dalam jasa "${serviceType}"?`)) {
+                            items = items.filter(item => item.serviceType !== serviceType);
+                            updateItemsTable();
+                            calculateTotal();
+                        }
+                    });
+                });
+                
+                // Cek apakah item terlalu banyak untuk 1 halaman A4
+                checkItemLimit();
+            }
+            
+            // Cek batas item untuk 1 halaman A4
+            function checkItemLimit() {
+                const warningElement = document.getElementById('itemLimitWarning');
+                // Perkiraan: maksimal 15 baris (termasuk header jasa) untuk muat 1 halaman A4
+                const estimatedRows = items.length + Object.keys(groupItemsByServiceType()).length;
+                
+                if (estimatedRows > 15) {
+                    warningElement.style.display = 'block';
+                } else {
+                    warningElement.style.display = 'none';
+                }
             }
             
             // Hapus semua item
@@ -997,7 +1261,7 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                 return grouped;
             }
             
-            // Generate dokumen
+            // Generate dokumen dengan pengelompokan
             document.getElementById('generateDocumentBtn').addEventListener('click', function() {
                 if (items.length === 0) {
                     alert('Silakan tambahkan item terlebih dahulu!');
@@ -1011,6 +1275,9 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                     document.getElementById('projectNumber').focus();
                     return;
                 }
+                
+                // Cek apakah item terlalu banyak
+                checkItemLimit();
                 
                 // Isi data dokumen
                 const clientName = document.getElementById('clientName').value || 'Nama Klien';
@@ -1096,6 +1363,7 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                 document.getElementById('documentTax').textContent = formatRupiah(totals.tax);
                 document.getElementById('documentDiscount').textContent = formatRupiah(totals.discount);
                 document.getElementById('documentTotal').textContent = formatRupiah(totals.total);
+                document.getElementById('documentPpnPercent').textContent = ppnPercentage;
                 
                 // Tampilkan watermark saat generate dokumen
                 document.querySelector('.watermark').style.display = 'block';
@@ -1111,10 +1379,17 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
             document.getElementById('printDocumentPreviewBtn').addEventListener('click', function() {
                 // Sembunyikan watermark saat print
                 document.querySelector('.watermark').style.display = 'none';
+                // Sembunyikan tombol-tombol
+                document.querySelectorAll('.no-print').forEach(el => {
+                    el.style.display = 'none';
+                });
                 window.print();
                 // Tampilkan kembali watermark setelah print
                 setTimeout(() => {
                     document.querySelector('.watermark').style.display = 'block';
+                    document.querySelectorAll('.no-print').forEach(el => {
+                        el.style.display = 'block';
+                    });
                 }, 100);
             });
             
@@ -1133,9 +1408,15 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                 // Tunggu sebentar agar dokumen ditampilkan sebelum dicetak
                 setTimeout(() => {
                     document.querySelector('.watermark').style.display = 'none';
+                    document.querySelectorAll('.no-print').forEach(el => {
+                        el.style.display = 'none';
+                    });
                     window.print();
                     setTimeout(() => {
                         document.querySelector('.watermark').style.display = 'block';
+                        document.querySelectorAll('.no-print').forEach(el => {
+                            el.style.display = 'block';
+                        });
                     }, 100);
                 }, 500);
             });
@@ -1160,17 +1441,22 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                     const watermark = documentElement.querySelector('.watermark');
                     if (watermark) watermark.style.display = 'none';
                     
+                    // Atur ukuran font lebih kecil untuk gambar
+                    documentElement.style.fontSize = '0.8rem';
+                    
                     // Gunakan html2canvas untuk mengambil screenshot
                     html2canvas(documentElement, {
-                        scale: 2, // Kualitas lebih tinggi
+                        scale: 1.5, // Kualitas lebih tinggi
                         useCORS: true,
-                        backgroundColor: '#ffffff'
+                        backgroundColor: '#ffffff',
+                        logging: false
                     }).then(canvas => {
                         // Kembalikan tampilan elemen
                         noPrintElements.forEach(el => {
                             el.style.display = 'block';
                         });
                         if (watermark) watermark.style.display = 'block';
+                        documentElement.style.fontSize = '';
                         
                         // Konversi canvas ke data URL
                         const imageData = canvas.toDataURL('image/jpeg', 0.9);
@@ -1181,12 +1467,13 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                             el.style.display = 'block';
                         });
                         if (watermark) watermark.style.display = 'block';
+                        documentElement.style.fontSize = '';
                         reject(error);
                     });
                 });
             }
             
-            // Generate PDF dari dokumen
+            // Generate PDF dari dokumen (selalu 1 halaman)
             function generatePDF() {
                 return new Promise((resolve, reject) => {
                     const documentElement = document.getElementById('invoiceSection');
@@ -1201,26 +1488,40 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                     const watermark = documentElement.querySelector('.watermark');
                     if (watermark) watermark.style.display = 'none';
                     
+                    // Atur ukuran font lebih kecil untuk PDF
+                    documentElement.style.fontSize = '0.75rem';
+                    
                     // Gunakan html2canvas untuk mengambil screenshot
                     html2canvas(documentElement, {
                         scale: 2,
                         useCORS: true,
-                        backgroundColor: '#ffffff'
+                        backgroundColor: '#ffffff',
+                        logging: false
                     }).then(canvas => {
                         // Kembalikan tampilan elemen
                         noPrintElements.forEach(el => {
                             el.style.display = 'block';
                         });
                         if (watermark) watermark.style.display = 'block';
+                        documentElement.style.fontSize = '';
                         
                         // Buat PDF
                         const { jsPDF } = window.jspdf;
                         const pdf = new jsPDF('p', 'mm', 'a4');
                         
-                        const imgWidth = 210; // Lebar A4 dalam mm
+                        // Hitung dimensi gambar agar pas di A4
+                        const imgWidth = 190; // Lebar sedikit dikurangi untuk margin
                         const imgHeight = (canvas.height * imgWidth) / canvas.width;
                         
-                        pdf.addImage(canvas.toDataURL('image/jpeg'), 'JPEG', 0, 0, imgWidth, imgHeight);
+                        // Pastikan gambar tidak melebihi tinggi A4
+                        const maxHeight = 280; // Tinggi maksimal untuk A4 dengan margin
+                        const finalHeight = imgHeight > maxHeight ? maxHeight : imgHeight;
+                        const finalWidth = (canvas.width * finalHeight) / canvas.height;
+                        
+                        // Hitung posisi tengah
+                        const xPos = (210 - finalWidth) / 2;
+                        
+                        pdf.addImage(canvas.toDataURL('image/jpeg'), 'JPEG', xPos, 10, finalWidth, finalHeight);
                         
                         // Simpan PDF
                         const docType = currentDocumentType === 'invoice' ? 'Invoice' : 'Penawaran';
@@ -1235,6 +1536,7 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                             el.style.display = 'block';
                         });
                         if (watermark) watermark.style.display = 'block';
+                        documentElement.style.fontSize = '';
                         reject(error);
                     });
                 });
@@ -1417,7 +1719,9 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
             });
             
             // Initialize
+            updateItemNumbers();
             updateItemsTable();
+            calculateTotal();
         });
     </script>
 </body>
