@@ -394,7 +394,7 @@
             margin-top: 5px;
         }
         
-        /* Form input untuk PPN dan diskon manual */
+        /* Form input untuk PPN, diskon, dan DP manual */
         .tax-discount-section {
             background-color: #f8f9fa;
             padding: 10px;
@@ -403,7 +403,7 @@
             font-size: 0.9rem;
         }
         
-        /* Input untuk PPN dan diskon */
+        /* Input untuk PPN, diskon, dan DP */
         .tax-discount-inputs .form-control {
             font-size: 0.9rem;
             padding: 5px 10px;
@@ -423,6 +423,11 @@
             text-align: right;
             margin-right: 5px;
             font-weight: bold;
+        }
+        
+        /* Styling untuk jenis jasa input manual */
+        .service-type-manual {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -528,7 +533,7 @@
                         </div>
                     </div>
                     
-                    <!-- Input untuk PPN dan Diskon Manual -->
+                    <!-- Input untuk PPN, Diskon, dan DP Manual -->
                     <div class="row tax-discount-inputs">
                         <div class="col-md-3 mb-3">
                             <label for="ppnPercentage" class="form-label">PPN (%)</label>
@@ -540,9 +545,14 @@
                             <input type="number" class="form-control" id="discountAmount" value="0" min="0">
                             <small class="form-text text-muted">Nominal diskon</small>
                         </div>
-                        <div class="col-md-6 mb-3 d-flex align-items-end">
+                        <div class="col-md-3 mb-3">
+                            <label for="dpAmount" class="form-label">DP / Uang Muka (Rp)</label>
+                            <input type="number" class="form-control" id="dpAmount" value="0" min="0">
+                            <small class="form-text text-muted">Down Payment / Uang Muka</small>
+                        </div>
+                        <div class="col-md-3 mb-3 d-flex align-items-end">
                             <button type="button" id="updateTaxDiscountBtn" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-sync-alt me-1"></i>Update PPN & Diskon
+                                <i class="fas fa-sync-alt me-1"></i>Update
                             </button>
                         </div>
                     </div>
@@ -574,16 +584,8 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="serviceType" class="form-label">Jenis Jasa <span class="text-danger">*</span></label>
-                            <select class="form-select" id="serviceType" required>
-                                <option value="">Pilih Jenis Jasa</option>
-                                <option value="Jasa Renovasi">Jasa Renovasi</option>
-                                <option value="Jasa Bangun Rumah">Jasa Bangun Rumah</option>
-                                <option value="Jasa Arsitek">Jasa Arsitek</option>
-                                <option value="Jasa Buat Kolam">Jasa Buat Kolam</option>
-                                <option value="Jasa Pasang Genting">Jasa Pasang Genting</option>
-                                <option value="Jasa Pengecatan">Jasa Pengecatan</option>
-                                <option value="Lainnya">Lainnya</option>
-                            </select>
+                            <input type="text" class="form-control" id="serviceType" placeholder="Contoh: Jasa Renovasi, Jasa Bangun Rumah, dll." required>
+                            <small class="form-text text-muted">Ketik jenis jasa secara manual</small>
                         </div>
                         <div class="col-md-8 mb-3">
                             <label class="form-label">Nama Item dalam Jasa ini:</label>
@@ -643,7 +645,7 @@
                     </table>
                 </div>
                 
-                <!-- Total Section dengan PPN dan Diskon Manual -->
+                <!-- Total Section dengan PPN, Diskon, dan DP Manual -->
                 <div class="total-section">
                     <div class="row">
                         <div class="col-md-6">
@@ -656,6 +658,12 @@
                                     <div class="col-md-6">
                                         <label for="currentDiscount" class="form-label">Diskon (Rp)</label>
                                         <input type="number" class="form-control form-control-sm" id="currentDiscount" value="0" min="0">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        <label for="currentDP" class="form-label">DP / Uang Muka (Rp)</label>
+                                        <input type="number" class="form-control form-control-sm" id="currentDP" value="0" min="0">
                                     </div>
                                 </div>
                                 <button type="button" id="applyTaxDiscountBtn" class="btn btn-outline-primary btn-sm mt-2">
@@ -676,10 +684,18 @@
                                 <span>Diskon:</span>
                                 <span id="discount">Rp 0</span>
                             </div>
+                            <div class="d-flex justify-content-between mb-1 fw-bold">
+                                <span>DP / Uang Muka:</span>
+                                <span id="dpDisplay">Rp 0</span>
+                            </div>
                             <hr class="my-1">
                             <div class="d-flex justify-content-between fw-bold fs-5">
                                 <span>Total:</span>
                                 <span id="total">Rp 0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2" style="border-top: 1px dashed #ccc; padding-top: 5px;">
+                                <span>Sisa yang harus dibayar:</span>
+                                <span id="remainingDisplay" class="fw-bold" style="color: #e74c3c;">Rp 0</span>
                             </div>
                         </div>
                     </div>
@@ -786,16 +802,24 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                             <span>Diskon:</span>
                             <span id="documentDiscount">Rp 0</span>
                         </div>
+                        <div class="d-flex justify-content-between mb-0 fw-bold">
+                            <span>DP / Uang Muka:</span>
+                            <span id="documentDP">Rp 0</span>
+                        </div>
                         <hr class="my-1">
                         <div class="d-flex justify-content-between fw-bold" style="font-size: 1rem;">
                             <span>TOTAL PEMBAYARAN:</span>
                             <span id="documentTotal">Rp 0</span>
                         </div>
+                        <div class="d-flex justify-content-between mt-2" style="border-top: 1px dashed #ccc; padding-top: 5px;">
+                            <span>Sisa yang harus dibayar:</span>
+                            <span id="documentRemaining" class="fw-bold" style="color: #e74c3c;">Rp 0</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Area Tanda Tangan Berdampingan dengan Stempel di TTD Direktur -->
+            <!-- Area Tanda Tangan Berdampingan dengan Stempel di TTD Manajemen -->
             <div class="signature-area">
                 <div class="signature-container">
                     <!-- Tanda Tangan Klien -->
@@ -806,15 +830,15 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                         <p style="font-size: 0.8rem;">Klien</p>
                     </div>
                     
-                    <!-- Tanda Tangan Direktur dengan Stempel di atasnya -->
+                    <!-- Tanda Tangan Manajemen dengan Stempel di atasnya -->
                     <div class="director-signature">
-                        <!-- Stempel ditempatkan di atas tanda tangan direktur, agak ke kiri -->
+                        <!-- Stempel ditempatkan di atas tanda tangan manajemen, agak ke kiri -->
                         <img src="img/stempel.png" alt="Stempel Perusahaan" class="stempel-over-signature">
                         
                         <p class="mb-0">Hormat kami,</p>
                         <div class="signature-line"></div>
                         <p class="fw-bold mt-0">BANGUNAN KEDIRI</p>
-                        <p style="font-size: 0.8rem;">Direktur</p>
+                        <p style="font-size: 0.8rem;">Manajemen</p>
                     </div>
                 </div>
                 
@@ -913,6 +937,7 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
             let currentDocumentType = 'invoice'; // 'invoice' atau 'quotation'
             let ppnPercentage = 10; // Default PPN 10%
             let discountAmount = 0; // Default diskon 0
+            let dpAmount = 0; // Default DP 0
             
             // Format angka ke format Rupiah
             function formatRupiah(angka) {
@@ -966,7 +991,7 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                 return `BK/${projectNumber}/${docTypeCode}/${monthRoman}/${year}`;
             }
             
-            // Hitung total dengan PPN dan diskon
+            // Hitung total dengan PPN, diskon, dan DP
             function calculateTotal() {
                 let subtotal = 0;
                 items.forEach(item => {
@@ -976,31 +1001,38 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                 const tax = subtotal * (ppnPercentage / 100);
                 const discount = discountAmount;
                 const total = subtotal + tax - discount;
+                const remaining = total - dpAmount;
                 
+                // Update display di tabel utama
                 document.getElementById('subtotal').textContent = formatRupiah(subtotal);
                 document.getElementById('tax').textContent = formatRupiah(tax);
                 document.getElementById('discount').textContent = formatRupiah(discount);
                 document.getElementById('total').textContent = formatRupiah(total);
                 document.getElementById('ppnPercentDisplay').textContent = ppnPercentage;
+                document.getElementById('dpDisplay').textContent = formatRupiah(dpAmount);
+                document.getElementById('remainingDisplay').textContent = formatRupiah(remaining);
                 
-                return { subtotal, tax, discount, total };
+                return { subtotal, tax, discount, total, dpAmount, remaining };
             }
             
-            // Update PPN dan diskon
+            // Update PPN, diskon, dan DP
             document.getElementById('applyTaxDiscountBtn').addEventListener('click', function() {
                 ppnPercentage = parseFloat(document.getElementById('currentPpn').value) || 0;
                 discountAmount = parseFloat(document.getElementById('currentDiscount').value) || 0;
+                dpAmount = parseFloat(document.getElementById('currentDP').value) || 0;
                 calculateTotal();
             });
             
-            // Update PPN dan diskon dari form proyek
+            // Update PPN, diskon, dan DP dari form proyek
             document.getElementById('updateTaxDiscountBtn').addEventListener('click', function() {
                 ppnPercentage = parseFloat(document.getElementById('ppnPercentage').value) || 0;
                 discountAmount = parseFloat(document.getElementById('discountAmount').value) || 0;
+                dpAmount = parseFloat(document.getElementById('dpAmount').value) || 0;
                 
                 // Update nilai di total section
                 document.getElementById('currentPpn').value = ppnPercentage;
                 document.getElementById('currentDiscount').value = discountAmount;
+                document.getElementById('currentDP').value = dpAmount;
                 
                 calculateTotal();
             });
@@ -1056,7 +1088,7 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                 
                 const serviceType = document.getElementById('serviceType').value;
                 if (!serviceType) {
-                    alert('Silakan pilih jenis jasa terlebih dahulu!');
+                    alert('Silakan ketik jenis jasa terlebih dahulu!');
                     return;
                 }
                 
@@ -1276,6 +1308,16 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                     return;
                 }
                 
+                // Update nilai PPN, Diskon, dan DP dari form data proyek
+                ppnPercentage = parseFloat(document.getElementById('ppnPercentage').value) || 0;
+                discountAmount = parseFloat(document.getElementById('discountAmount').value) || 0;
+                dpAmount = parseFloat(document.getElementById('dpAmount').value) || 0;
+                
+                // Update nilai di total section (jika ada)
+                document.getElementById('currentPpn').value = ppnPercentage;
+                document.getElementById('currentDiscount').value = discountAmount;
+                document.getElementById('currentDP').value = dpAmount;
+                
                 // Cek apakah item terlalu banyak
                 checkItemLimit();
                 
@@ -1363,6 +1405,8 @@ Atas Nama: BANGUNAN KEDIRI</textarea>
                 document.getElementById('documentTax').textContent = formatRupiah(totals.tax);
                 document.getElementById('documentDiscount').textContent = formatRupiah(totals.discount);
                 document.getElementById('documentTotal').textContent = formatRupiah(totals.total);
+                document.getElementById('documentDP').textContent = formatRupiah(totals.dpAmount);
+                document.getElementById('documentRemaining').textContent = formatRupiah(totals.remaining);
                 document.getElementById('documentPpnPercent').textContent = ppnPercentage;
                 
                 // Tampilkan watermark saat generate dokumen
