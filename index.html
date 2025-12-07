@@ -437,6 +437,26 @@
             white-space: pre-line;
             margin-bottom: 5px;
         }
+        
+        /* Harga satuan di invoice - ditambahkan di sebelah kanan nama item */
+        .item-with-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .item-name {
+            flex: 1;
+        }
+        
+        .unit-price {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 0.85rem;
+            text-align: right;
+            min-width: 120px;
+        }
     </style>
 </head>
 <body>
@@ -787,7 +807,8 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                     <thead>
                         <tr>
                             <th width="5%">No</th>
-                            <th width="55%">Jenis Jasa / Nama Item</th>
+                            <th width="40%">Jenis Jasa / Nama Item</th>
+                            <th width="15%">Harga Satuan</th>
                             <th width="10%">Volume</th>
                             <th width="10%">Satuan</th>
                             <th width="20%">Total (Rp)</th>
@@ -1321,7 +1342,7 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                 return grouped;
             }
             
-            // Generate dokumen dengan pengelompokan
+            // Generate dokumen dengan pengelompokan dan harga satuan sesuai urutan baru
             document.getElementById('generateDocumentBtn').addEventListener('click', function() {
                 if (items.length === 0) {
                     alert('Silakan tambahkan item terlebih dahulu!');
@@ -1397,7 +1418,7 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                 document.getElementById('documentNotes').textContent = projectNotes;
                 document.getElementById('documentTerms').textContent = projectTerms;
                 
-                // Isi items dokumen dengan grouping berdasarkan jenis jasa
+                // Isi items dokumen dengan grouping berdasarkan jenis jasa dan harga satuan sesuai urutan baru
                 const documentItemsList = document.getElementById('documentItemsList');
                 documentItemsList.innerHTML = '';
                 
@@ -1412,17 +1433,18 @@ Pembayaran dianggap lunas setelah dana diterima.</textarea>
                     serviceRow.className = 'service-group-header';
                     serviceRow.innerHTML = `
                         <td>${rowCounter}</td>
-                        <td colspan="4"><strong>${serviceType}</strong></td>
+                        <td colspan="5"><strong>${serviceType}</strong></td>
                     `;
                     documentItemsList.appendChild(serviceRow);
                     
-                    // Tambah item-item untuk jenis jasa ini
+                    // Tambah item-item untuk jenis jasa ini dengan urutan baru
                     serviceItems.forEach(item => {
                         const itemRow = document.createElement('tr');
                         itemRow.className = 'item-row';
                         itemRow.innerHTML = `
                             <td></td>
                             <td>${item.name}</td>
+                            <td>${formatRupiah(item.unitPrice)}</td>
                             <td>${item.quantity}</td>
                             <td>${item.unit}</td>
                             <td>${formatRupiah(item.total)}</td>
